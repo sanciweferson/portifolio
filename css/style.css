@@ -381,8 +381,8 @@ right: 5px;
   min-height: calc(100vh - 5rem);
   display: grid;
 /* place-items: center; */
-margin-top: 6
-4rem;
+margin-top: 
+6rem;
 
 }
 
@@ -418,8 +418,8 @@ a,.hero-btn{
 @media screen and (min-width: 908px) {
   
 .hero-center {
-margin-top: 6
-6rem;
+margin-top: 
+4rem;
 
 }
   .hero-info .hero-btn{
