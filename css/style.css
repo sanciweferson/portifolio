@@ -374,15 +374,30 @@ right: 5px;
 }
 
 .hero-center {
+
   min-height: calc(100vh - 5rem);
   display: grid;
-  place-items: center;
+/* place-items: center; */
+margin-top: 6rem;
+
 }
-.hero-info h4 {
+
+.hero-info h1, .hero-btn{
+  text-align: center;
+}
+.hero-info .hero-btn{
+  display: grid;
+  justify-self: center;
+  width: 50%;
+}
+.hero-info  h4 {
+  text-align: center;
   color: var(--clr-grey-5);
+
 }
 .hero-icons {
   justify-self: start;
+  justify-self: center;
 }
 .hero-btn{
   margin-top: 1.5rem;
