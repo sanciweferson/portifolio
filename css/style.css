@@ -97,14 +97,17 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
+html,
 body {
+  width: 100%;
+  min-height: 100dvh; /* evita bugs de altura em mobile */
   font-family: var(--ff-secondary);
   background: var(--clr-white);
   color: var(--clr-grey-1);
+  scroll-behavior: smooth;
   line-height: 1.5;
   font-size: 0.875rem;
-  height: 100vh;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 ul {
   list-style-type: none;
@@ -418,8 +421,7 @@ a,.hero-btn{
 @media screen and (min-width: 908px) {
   
 .hero-center {
-margin-top: 
-4rem;
+  margin-top: 0; /* remove espaço no desktop */
 
 }
   .hero-info .hero-btn{
