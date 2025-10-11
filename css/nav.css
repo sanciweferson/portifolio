@@ -23,7 +23,8 @@
   justify-content: space-between;
   padding: 0 1rem;
   background-color: var(--clr-white);
-  transition: background-color 0.4s ease, color 0.4s ease, backdrop-filter 0.4s ease;
+  transition: background-color 0.4s ease, color 0.4s ease,
+    backdrop-filter 0.4s ease;
   z-index: 0;
 }
 
@@ -192,8 +193,12 @@
   font-size: 2.5rem;
 }
 
+#menu__toggle {
+  color: black;
+}
+
 #menu__toggle:hover {
-  color: white;
+  color: rgb(12, 7, 150);
 }
 
 /* =============================
