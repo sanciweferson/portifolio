@@ -1,0 +1,252 @@
+/* =============================
+  Main Stylesheet
+============================= */
+
+/* Import order matters! */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap");
+@import "_variables.css";
+@import "_global.css";
+@import "_theme.css";
+
+/* =============================
+  NAVBAR
+============================= */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: var(--clr-white);
+  transition: background-color 0.4s ease, color 0.4s ease, backdrop-filter 0.4s ease;
+  z-index: 0;
+}
+
+/* Links padrão e tema escuro */
+.nav a,
+[data-theme="dark"] .nav a {
+  color: var(--clr-white);
+}
+
+/* Navbar ao rolar */
+.nav.scrolled {
+  backdrop-filter: blur(8px);
+  box-shadow: var(--dark-shadow);
+}
+
+.nav.scrolled,
+[data-theme="dark"] .nav.scrolled {
+  background-color: var(--clr-grey-2);
+  box-shadow: var(--dark-shadow);
+  backdrop-filter: blur(8px);
+}
+
+.nav.scrolled a {
+  color: var(--clr-white);
+}
+
+/* Tema escuro: navbar padrão */
+[data-theme="dark"] .nav {
+  background-color: var(--secondary);
+  color: var(--text);
+}
+
+/* =============================
+  NAV LINKS E BOTÕES
+============================= */
+
+.nav-links-wrapper {
+  display: none;
+}
+
+.nav-btn {
+  background: transparent;
+  border: transparent;
+  font-size: 1.75rem;
+  justify-self: end;
+}
+
+.nav-btn:hover {
+  color: var(--primary);
+}
+
+.nav-center {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
+/* =============================
+  SIDEBAR (MOBILE)
+============================= */
+
+#mobile__side {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+  border-right: 1px solid white;
+  box-shadow: var(light-shadow);
+}
+
+[data-theme="light"] #mobile__side {
+  background: var(--clr-grey-9);
+}
+
+[data-theme="dark"] #mobile__side {
+  background: var(--bg);
+}
+
+#mobile__side.open {
+  transform: translateX(0);
+}
+
+/* =============================
+  SIDEBAR LINKS E ÍCONES
+============================= */
+
+.grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0rem 2rem;
+}
+
+.sidebar-links {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.sidebar-links a,
+[data-theme="dark"] .sidebar-links a {
+  text-transform: capitalize;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.sidebar-links a {
+  color: var(--clr-grey-1);
+  font-size: 1.5rem;
+}
+
+.sidebar-links a:hover {
+  color: var(--clr-primary-5);
+}
+
+[data-theme="dark"] .sidebar-links a {
+  color: aliceblue;
+}
+
+.social-icons {
+  margin-top: 8rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  justify-self: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.social-icons a,
+[data-theme="dark"] .social-icons a {
+  color: var(--clr-grey-1);
+}
+
+.social-icons a:hover {
+  color: var(--clr-primary-5);
+}
+
+[data-theme="dark"] .social-icons a {
+  color: aliceblue;
+}
+
+/* =============================
+  BOTÕES DE TOGGLE
+============================= */
+
+#toggle__mobile,
+#toggle__desktop {
+  background: var(--clr-grey-4);
+  border: transparent;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+#toggle__mobile {
+  justify-self: end;
+  align-self: flex-start;
+}
+
+#menu__toggle {
+  font-size: 2.5rem;
+}
+
+#menu__toggle:hover {
+  color: white;
+}
+
+/* =============================
+  MEDIA QUERIES
+============================= */
+
+@media screen and (min-width: 768px) {
+  #mobide-side {
+    display: none;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  [data-theme="dark"] .nav {
+    background: var(--clr-grey-1);
+  }
+
+  .nav-links-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links a,
+  [data-theme="dark"] .nav-links a {
+    text-transform: capitalize;
+    font-weight: bold;
+    transition: var(--transition);
+  }
+
+  .nav-links a {
+    color: var(--clr-grey-1);
+    font-size: 1rem;
+  }
+
+  .nav-links a:hover {
+    color: var(--clr-primary-5);
+  }
+
+  .theme-toggle--desktop {
+    justify-self: end;
+  }
+
+  [data-theme="dark"] .nav-links a:hover {
+    color: var(--clr-primary-5);
+  }
+}
